@@ -1,0 +1,583 @@
+project_name: higgsfield_creator_scoring
+
+results_per_query: 15
+recent_videos_to_check: 8
+recent_comments_per_video: 15
+use_comment_analysis: false
+include_channel_search: false
+min_subscribers: 2000
+max_total_candidates: 700
+max_candidates_per_category: 200
+search_order: sequential
+max_retries: 3
+retry_backoff_seconds: 2
+
+audience_signal_threshold_high: 8
+workflow_signal_threshold_high: 6
+comment_tool_intent_threshold_high: 8
+uploads_30d_consistency_threshold: 4
+
+product_feature_signal_threshold_high: 6
+creative_replication_comment_threshold_high: 5
+premium_aesthetic_signal_threshold_high: 5
+demoability_threshold_high: 4
+
+weights:
+  audience_fit: 2.5
+  monetization_focus: 1.5
+  generic_tool_relevance: 1.0
+  higgsfield_specific_fit: 2.5
+  engagement_quality: 1.5
+  posting_frequency: 0.75
+  demoability: 1.5
+  premium_aesthetic_fit: 1.5
+
+bonuses:
+  mid_tier_bonus: 1.0
+  view_health_bonus: 0.5
+  workflow_bonus: 0.5
+  consistency_bonus: 0.5
+  feature_match_bonus: 1.0
+  creative_direction_bonus: 0.75
+
+penalties:
+  generic_ai_novelty_penalty: 1.0
+  broad_entertainment_penalty: 1.0
+  low_visual_relevance_penalty: 0.75
+  weak_demoability_penalty: 0.75
+  inflated_subscriber_penalty: 0.5
+  inactive_penalty: 0.5
+
+output_fields:
+  - channel_name
+  - channel_url
+  - primary_category
+  - matched_categories
+  - subscribers
+  - median_views_recent_10
+  - median_views_to_sub_ratio
+  - uploads_last_30_days
+  - normalized_score
+  - priority_tier
+  - fit_label
+  - recommended_higgsfield_angle
+  - top_feature_matches
+  - fit_comment
+  - example_video_1
+  - last_updated_at
+
+recommended_higgsfield_angles:
+  - cinematic_quality_upgrade
+  - identity_consistency
+  - style_system_and_brand_look
+  - moodboard_to_video_workflow
+  - editing_polish_and_transitions
+
+keyword_dictionaries:
+  audience_fit:
+    - creator
+    - content creator
+    - youtube creator
+    - freelancer
+    - agency
+    - editor
+    - videographer
+    - personal brand
+    - creator business
+    - online business
+    - course creator
+    - creative director
+    - brand strategist
+    - ad creative
+    - media buyer
+    - social media manager
+    - performance marketer
+    - content studio
+
+  monetization:
+    - monetization
+    - make money
+    - revenue
+    - income
+    - sponsorship
+    - brand deal
+    - digital products
+    - clients
+    - sales
+    - leads
+    - business
+    - profit
+    - offer
+    - acquisition
+    - conversion
+    - campaign performance
+    - creator economy
+    - content business
+
+  workflow:
+    - workflow
+    - system
+    - process
+    - behind the scenes
+    - batching
+    - pipeline
+    - productivity
+    - how i make videos
+    - how i edit
+    - content system
+    - scale content
+    - production
+    - pre production
+    - ideation process
+    - creative workflow
+    - production pipeline
+    - content engine
+
+  generic_tool_relevance:
+    - tool
+    - software
+    - plugin
+    - editor
+    - editing software
+    - ai tool
+    - creator tools
+    - premiere pro
+    - davinci resolve
+    - after effects
+    - creator software
+    - workflow software
+    - video tool
+
+  premium_aesthetic_signals:
+    - cinematic
+    - visual identity
+    - art direction
+    - aesthetic
+    - brand look
+    - polished
+    - premium visuals
+    - storytelling
+    - film look
+    - commercial quality
+    - creative direction
+
+  tool_buying_intent_comments:
+    - what tool do you use
+    - what software do you use
+    - how do you edit this
+    - what app is this
+    - how do you make videos this fast
+    - what setup do you use
+    - how can i recreate this
+    - what plugin is this
+    - what camera do you use
+    - what workflow do you use
+
+  creative_replication_intent_comments:
+    - how do i get this look
+    - how did you make this shot
+    - how do i recreate this style
+    - what did you use for this scene
+    - how did you make this cinematic
+    - how do you get visuals like this
+    - what workflow made this possible
+    - how did you make this character consistent
+    - how did you plan this sequence
+    - how did you create this mood
+
+  creator_intent_comments:
+    - i started my channel
+    - trying to grow my channel
+    - my clients
+    - my editing workflow
+    - i make content for
+    - my youtube channel
+    - i want to improve my videos
+    - i am building my brand
+    - i run an agency
+    - i create ads for clients
+
+  business_intent_comments:
+    - convert clients
+    - make money from content
+    - leads from content
+    - grow my business
+    - monetize my channel
+    - revenue from youtube
+    - get more clients
+    - better ads for my brand
+    - scale my content business
+
+  higgsfield_specific_fit:
+    cinema_studio:
+      - cinematic
+      - filmmaking
+      - story-driven
+      - spec ad
+      - commercial
+      - high production value
+      - visual storytelling
+      - cinematic b roll
+      - creative direction
+      - premium video
+      - short film
+
+    soul:
+      - ai character
+      - recurring character
+      - character design
+      - visual persona
+      - branded character
+      - worldbuilding
+      - digital persona
+
+    soul_id:
+      - character consistency
+      - consistent identity
+      - visual continuity
+      - recurring face
+      - brand identity
+      - campaign consistency
+      - keep the same character
+
+    soul_hex:
+      - color palette
+      - style consistency
+      - visual identity
+      - aesthetic system
+      - design language
+      - brand style
+      - visual system
+
+    soul_moodboard:
+      - moodboard
+      - visual references
+      - concept board
+      - pre production
+      - shot planning
+      - creative brief
+      - visual planning
+      - reference gathering
+      - concept development
+
+    camera_control:
+      - camera movement
+      - shot design
+      - cinematography
+      - framing
+      - dolly
+      - orbit
+      - zoom
+      - pan
+      - cinematic camera
+      - directing shots
+      - virtual camera
+
+    transitions:
+      - transitions
+      - seamless edits
+      - editing polish
+      - hook editing
+      - short form editing
+      - scene changes
+      - smooth cuts
+      - transition design
+
+    higgsfield_audio:
+      - sound design
+      - music sync
+      - emotional pacing
+      - audio storytelling
+      - cinematic sound
+      - video audio workflow 
+      - sound effects
+      - music for videos
+
+categories:
+  - name: Creative Directors and Ad Creators
+    weight: 1.25
+    queries:
+      - branded content production workflow
+      - creative direction for ads
+      - how to make better video ads
+      - ai advertising
+      - ai advertising workflow
+      - ad creative systems
+      - performance creative workflow
+    keywords:
+      - creative direction
+      - spec ad
+      - branded content
+      - ad creative
+      - visual storytelling
+      - campaign assets
+      - performance creative
+    negative_keywords:
+      - super bowl reaction
+      - ad compilation
+      - ad review funny
+      - commercial reaction
+
+  - name: Workflow Optimizers
+    weight: 1.2
+    queries:
+      - behind the scenes content workflow
+      - content pipeline for creators
+      - how i produce content fast
+      - tools for video production
+    keywords:
+      - behind the scenes
+      - content systems
+      - production process
+      - production system
+    negative_keywords: []
+
+  - name: Video Production Pros
+    weight: 1.2
+    queries:
+      - filmmaking workflow for creators
+      - professional video editing workflow
+      - color grading tutorial
+      - motion design for content creators
+      - freelance video production systems
+      - how to make videos look cinematic
+    keywords:
+      - filmmaking
+      - editing
+      - color grading
+      - motion design
+      - storytelling
+      - production systems
+      - freelance workflow
+      - cinematography
+    negative_keywords:
+      - movie recap
+      - fan edit
+      - anime edit
+      - trailer reaction
+
+  - name: AI Filmmaking and Visual Direction
+    weight: 1.2
+    queries:
+      - ai filmmaking workflow
+      - ai cinematic video tutorial
+      - ai video direction
+      - ai short film workflow
+      - ai visual storytelling
+      - consistent character ai video
+      - ai commercial creation workflow
+      - ai cinematography tutorial
+    keywords:
+      - ai filmmaking
+      - cinematic ai video
+      - visual storytelling
+      - character consistency
+      - direction
+      - short film
+      - creative workflow
+      - ai commercial
+    negative_keywords:
+      - ai meme
+      - ai prank
+      - ai news recap
+      - ai song
+      - ai celebrity
+
+  - name: Creator Business Channels
+    weight: 1.15
+    queries:
+      - sponsorships for creators
+      - digital products for creators
+      - content business strategy
+      - creator income streams
+    keywords:
+      - creator business
+      - revenue
+      - income
+      - sponsorships
+      - digital products
+      - monetization
+      - creator economy
+    negative_keywords: []
+
+  - name: Tutorial-Adjacent Educators
+    weight: 1.05
+    queries:
+      - premiere pro tutorial for creators
+      - davinci resolve workflow tutorial
+      - editing plugins for youtube creators
+      - thumbnail workflow for creators
+      - creator software stack 2026
+      - video editing setup for freelancers
+    keywords:
+      - premiere pro
+      - davinci resolve
+      - editing plugins
+      - creator setup
+      - lighting
+      - camera systems
+      - thumbnail system
+      - software stack
+    negative_keywords: []
+
+  - name: Tool-Curious Creators
+    weight: 0.85
+    queries:
+      - best creator tools 2026
+      - video editing tools for creators
+      - ai apps for content creators
+      - best tools for video creators
+    keywords:
+      - creator tools
+      - editing tools
+      - ai tools
+      - apps for creators
+      - workflow software
+      - creator stack
+    negative_keywords:
+      - unboxing
+      - gadget news
+      - tech roundup
+      - smartphone review
+
+  - name: AI Content and Automation Creators
+    weight: 0.85
+    queries:
+      - ai filmmaking tutorial
+      - ai assisted video production
+      - content automation system for youtube
+      - faceless youtube workflow with ai
+    keywords:
+      - ai filmmaking
+      - ai assisted production
+      - content automation
+      - creator automation systems
+      - faceless channel
+    negative_keywords:
+      - ai memes
+      - ai song
+      - ai voice prank
+      - ai news
+      - ai controversy
+
+fit_label_rules:
+  strong_fit:
+    min_audience_fit_score: 2.0
+    min_higgsfield_specific_fit_score: 2.0
+    min_demoability_score: 1.0
+    any_of:
+      - monetization_focus_score >= 1.5
+      - product_feature_signal_count >= 6
+      - creative_replication_comment_count >= 5
+      - premium_aesthetic_signal_count >= 5
+
+  medium_fit:
+    min_audience_fit_score: 1.5
+    min_higgsfield_specific_fit_score: 1.0
+
+  weak_fit:
+    max_audience_fit_score: 1.0
+    or_conditions:
+      - higgsfield_specific_fit_score == 0
+      - demoability_score == 0
+      - premium_aesthetic_fit_score == 0
+
+  disqualify:
+    any_of:
+      - broad_entertainment_penalty_applies
+      - low_visual_relevance_penalty_applies
+      - no_meaningful_recent_activity
+      - unrelated_to_creator_or_visual_workflow
+
+affinity_scoring:
+  cinema_studio_affinity:
+    source_dictionary: cinema_studio
+    score_range: [0, 3]
+
+  soul_affinity:
+    source_dictionary: soul
+    score_range: [0, 3]
+
+  soul_id_affinity:
+    source_dictionary: soul_id
+    score_range: [0, 3]
+
+  soul_hex_affinity:
+    source_dictionary: soul_hex
+    score_range: [0, 3]
+
+  soul_moodboard_affinity:
+    source_dictionary: soul_moodboard
+    score_range: [0, 3]
+
+  camera_control_affinity:
+    source_dictionary: camera_control
+    score_range: [0, 3]
+
+  transitions_affinity:
+    source_dictionary: transitions
+    score_range: [0, 3]
+
+  higgsfield_audio_affinity:
+    source_dictionary: higgsfield_audio
+    score_range: [0, 3]
+
+ranking_formula:
+  base_score: >
+    (audience_fit_score * 2.5) +
+    (monetization_focus_score * 1.5) +
+    (generic_tool_relevance_score * 1.0) +
+    (higgsfield_specific_fit_score * 2.5) +
+    (engagement_quality_score * 1.5) +
+    (posting_frequency_score * 0.75) +
+    (demoability_score * 1.5) +
+    (premium_aesthetic_fit_score * 1.5)
+
+  bonus_score_components:
+    - mid_tier_bonus
+    - view_health_bonus
+    - workflow_bonus
+    - consistency_bonus
+    - feature_match_bonus
+    - creative_direction_bonus
+
+  penalty_score_components:
+    - generic_ai_novelty_penalty
+    - broad_entertainment_penalty
+    - low_visual_relevance_penalty
+    - weak_demoability_penalty
+    - inflated_subscriber_penalty
+    - inactive_penalty
+
+  normalized_score_formula: >
+    min(10, max(0, base_score + bonus_score - penalty_score))
+
+priority_tiers:
+  A:
+    min_score: 8.5
+  B:
+    min_score: 7.0
+    max_score: 8.49
+  C:
+    min_score: 5.5
+    max_score: 6.99
+  D:
+    max_score: 5.49
+
+commentary_generation:
+  include_fields:
+    - audience_type_summary
+    - why_higgsfield_fits
+    - strongest_feature_matches
+    - recommended_higgsfield_angle
+    - buyer_intent_summary
+  max_sentences: 3
+
+sorting:
+  primary:
+    - normalized_score: desc
+  tie_breakers:
+    - fit_label: desc
+    - avg_views_recent_10: desc
+    - creative_replication_comment_count: desc
+    - uploads_last_30_days: desc

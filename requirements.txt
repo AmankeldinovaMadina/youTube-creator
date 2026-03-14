@@ -1,0 +1,9 @@
+google-auth==2.38.0
+google-auth-oauthlib==1.2.1
+gspread==6.1.4
+openai==1.66.3
+python-dateutil==2.9.0.post0
+PyYAML==6.0.2
+tenacity==9.0.0
+apify-client>=2.5.0
+python-dotenv

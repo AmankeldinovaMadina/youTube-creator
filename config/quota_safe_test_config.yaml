@@ -1,0 +1,90 @@
+project_name: higgsfield_creator_scoring_quota_safe_test
+results_per_query: 1
+recent_videos_to_check: 2
+recent_comments_per_video: 0
+use_comment_analysis: false
+include_channel_search: false
+min_subscribers: 5000
+max_total_candidates: 1
+max_candidates_per_category: 1
+search_order: sequential
+max_retries: 1
+retry_backoff_seconds: 1
+
+audience_signal_threshold_high: 8
+workflow_signal_threshold_high: 6
+comment_tool_intent_threshold_high: 8
+uploads_30d_consistency_threshold: 2
+
+weights:
+  audience_fit: 3
+  monetization_focus: 2
+  tool_relevance: 2
+  engagement_quality: 2
+  posting_frequency: 1
+
+bonuses:
+  mid_tier_bonus: 1.0
+  view_health_bonus: 0.5
+  workflow_bonus: 0.5
+  consistency_bonus: 0.5
+
+penalties:
+  curiosity_penalty: 1.0
+  broad_entertainment_penalty: 1.0
+  inflated_subscriber_penalty: 0.5
+  inactive_penalty: 0.5
+
+keyword_dictionaries:
+  audience_fit:
+    - creator
+    - content creator
+    - youtube creator
+    - freelancer
+    - agency
+    - editor
+    - marketer
+    - personal brand
+  monetization:
+    - monetization
+    - make money
+    - revenue
+    - income
+    - sponsorship
+    - business
+  workflow:
+    - workflow
+    - system
+    - process
+    - batching
+    - pipeline
+    - production
+  tool_relevance:
+    - tool
+    - software
+    - app
+    - plugin
+    - creator tools
+    - editing software
+  tool_buying_intent_comments:
+    - what tool do you use
+    - what software do you use
+  creator_intent_comments:
+    - i started my channel
+  business_intent_comments:
+    - make money from content
+
+categories:
+  - name: YouTube Growth Experts
+    weight: 1.0
+    queries:
+      - youtube growth strategy
+    keywords:
+      - growth
+      - retention
+      - ctr
+      - thumbnails
+    negative_keywords:
+      - music video
+      - reaction
+      - gaming highlights
