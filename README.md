@@ -51,6 +51,88 @@ Optional:
 ```bash
 python main.py --config config/default_config.yaml --log-level INFO
 ```
+## Category Prioritization Logic
+
+The category weights in the config file are my way of encoding **strategic prioritization** into the sourcing system.
+
+They are not just technical values. They reflect a growth judgment about **which creator categories are more likely to produce valuable Higgsfield partnerships**.
+
+In practice, a higher category weight means:
+
+- the category is more aligned with Higgsfield’s product value
+- the audience is more likely to understand the ROI of the tool
+- the creator’s format is more likely to demonstrate Higgsfield well
+- creators from that category should rank slightly higher when other signals are similar
+
+So yes, the category weights are a form of prioritization. They translate market intuition into the discovery and ranking pipeline.
+
+---
+
+## How I Thought About Priority
+
+I did not want to prioritize categories just by topical relevance to AI or video.  
+I prioritized them by a more practical question:
+
+**Which creator categories are most likely to drive paid adoption for Higgsfield, not just awareness or curiosity?**
+
+That is why higher weights went to categories where the audience is more likely to:
+
+- care about visual quality
+- feel production pressure
+- look for workflow leverage
+- use content commercially
+- adopt tools that improve speed, polish, or creative control
+
+And lower weights went to categories where the audience may still be relevant, but is more likely to be:
+
+- curiosity-driven
+- top-of-funnel only
+- less commercially motivated
+- interested in tools without necessarily paying for them
+
+---
+
+## Category Weight Interpretation
+
+### Creative Directors and Ad Creators — `1.25`
+This received the highest weight because it has one of the clearest ROI cases for Higgsfield.
+
+These creators often serve audiences working in branded content, ads, client work, or creative production. That audience already values faster iteration, stronger visuals, and scalable creative output. In other words, they are more likely to see Higgsfield as a production advantage rather than a novelty.
+
+### Workflow Optimizers — `1.20`
+This category was weighted highly because Higgsfield is fundamentally a workflow product.
+
+Creators in this group teach systems, process, batching, behind-the-scenes production, and content operations. Their audiences are already trying to remove bottlenecks and improve execution, which makes them strong candidates for product adoption.
+
+### Video Production Pros — `1.20`
+This category also received high priority because it combines strong visual relevance with product credibility.
+
+If filmmakers, editors, or production educators use Higgsfield in a way that feels serious and intentional, the product becomes easier to trust. Their audiences are often freelancers, studios, and ambitious creators who are more willing to pay for tools that improve output quality or speed.
+
+### AI Filmmaking and Visual Direction — `1.20`
+This category is highly relevant to Higgsfield’s product surface, especially around cinematic control, character consistency, and visual direction.
+
+I still treated it selectively. The weight is high because the best creators in this group are strong fits, but the category needs filtering to separate serious workflow-oriented creators from pure novelty-driven AI content.
+
+### Creator Business Channels — `1.15`
+This category received a strong weight because the audience already thinks in monetization, leverage, and ROI terms.
+
+These viewers are often trying to turn content into revenue, leads, clients, or business growth. That makes them more attractive than a general creator audience, even if the visual fit is slightly less direct than in production-heavy categories.
+
+### Tutorial-Adjacent Educators — `1.05`
+This category was given moderate priority because the audience is often in tool-buying mode.
+
+These creators influence software adoption directly, but Higgsfield can sometimes be one step removed from the creator’s core teaching topic. So the category is valuable, but slightly less strategically strong than production- or business-native groups.
+
+### Tool-Curious Creators — `0.85`
+This category was intentionally weighted lower.
+
+It can drive discovery and trial starts, but it also carries higher false-positive risk. These audiences are often open to testing tools, but not always committed enough to become paid users. I treated this group as useful for reach, but weaker for reliable conversion.
+
+### AI Content and Automation Creators — `0.85`
+This category was also weighted lower for a similar reason.
+
+It can surface interesting creators, especially those tied to scalable content businesses or repeatable production systems. But it can also over-index toward audiences that like AI in theory without paying for software in practice. So I treated this as a selective category, not a primary one.
 
 ## How the Scoring Logic Works
 
